@@ -1,0 +1,47 @@
+there are various types of languages 
+compiler vs interpreted languages
+
+
+and even there are strongly types languages and loosely typed languages
+strongly types languages -- c++, java and rust
+lesser runtime errors
+stricter codebase 
+easy to catch erros at compile time 
+
+
+
+loosely typed languages -- js, python, perl, php 
+easy to write code 
+fast to bootstrap 
+low learning curve 
+
+#ts was introduced to add types in js as people realised  js is very powerful language but lacks types 
+#ts is lang developed by microsoft 
+#syntaical superset of js 
+
+ts code never run on browser, browser can only understand js 
+ts never runs at all from line to line , even node js runtime not able to run 
+js is runtime language, ts gets compiled(transpiled) down to js 
+when ts gets compiled down to js, you get type checking(similar to c++). IF there is an error,the conversion to js fails 
+
+so basically ts add compile time checks to js which was only runtime language 
+
+
+
+tsc is an offical ts compiler that you can use to convert ts to js 
+some famous others -- 
+esbuild 
+swc 
+
+
+npm init -y 
+npx tsc --init
+
+npm vc npx 
+npm let you install module
+npx is nope pacakge exceutable  .. it helps you to run a pacakge without offically installiing it
+
+
+tsc -b will make js file for your ts files 
+then run it using node filename.js 
+
