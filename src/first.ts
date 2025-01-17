@@ -347,3 +347,91 @@ which might otherwise be represented as numbers or strings.
 // })
 
 
+
+// ----------------
+
+//generics
+/*
+Generics are a language independent concept (exist in C++ as well)
+
+
+
+1. Problem Statement
+Let’s say you have a function that needs to return the first element of an array. Array can be of type either string or integer.
+How would you solve this problem?
+*/
+
+// function getFirstElement(arr: (string | number)[]) {
+//     return arr[0];
+// }
+
+// const el = getFirstElement([1, 2, 3]);
+
+//What is the problem in this approach?
+ 
+//1. Typescript isn’t able to infer the right type of the return type
+// function getFirstElement(arr: (string | number)[]) {
+//     return arr[0];
+// }
+
+// const el = getFirstElement(["harkiratSingh", "ramanSingh"]);
+// console.log(el.toLowerCase()) // Property 'toLowerCase' does not exist on type 'string | number'.
+// // Property 'toLowerCase' does not exist on type 'number'.t
+
+//2.user can send different types of values in inputs, without any type errors
+// can be solve by this string[] | number[], but There IS BETTER WAY >>> 
+// function getFirstElement(arr: (string | number)[]) {
+//     return arr[0];  
+// }
+
+// const el = getFirstElement([1, 2, '3']);
+
+
+//Solution - Generics
+// Generics enable you to create components that work with any data type
+//  while still providing compile-time type safety.
+
+// function identity<T>(arg: T): T {
+//     return arg;
+// }
+
+// let output1 = identity<string>("myString");
+// let output2 = identity<number>(100);
+
+
+// function getFirstElement<T>(arr: T[]) {
+//     return arr[0];
+// }
+
+// const el = getFirstElement(["harkiratSingh", "ramanSingh"]);
+// console.log(el.toLowerCase())
+
+
+
+// Constant exports
+// math.ts
+// export function add(x: number, y: number): number {
+//     return x + y;
+// }
+
+// export function subtract(x: number, y: number): number {
+//     return x - y;
+// }
+
+// main.ts
+// import { add } from "./math"
+
+// add(1, 2)
+
+// Default exports
+// calculator.ts 
+// export default class Calculator {
+//     add(x: number, y: number): number {
+//         return x + y;
+//     }
+// }
+
+// import Calculator from './Calculator';
+
+// const calc = new Calculator();
+// console.log(calc.add(10, 5));
