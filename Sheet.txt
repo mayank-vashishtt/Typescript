@@ -45,3 +45,13 @@ npx is nope pacakge exceutable  .. it helps you to run a pacakge without offical
 tsc -b will make js file for your ts files 
 then run it using node filename.js 
 
+in js its had given this 
+function greet(firstName, lastName, age) {   
+
+    console.log("Hello " + firstName + " " + lastName + " " + age);
+}
+
+// Hello John undefined undefined
+
+
+
