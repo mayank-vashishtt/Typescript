@@ -259,3 +259,91 @@
 //   }
 
 // use of extends above in interface
+
+
+// -- null and undefined in typescript
+// null and undefined are two different types in TypeScript.
+// null is a value that represents no value.
+// undefined is a value that represents the absence of a value.
+
+/* 
+enums -- enumerations 
+is a feature that allow you to define a set of named constants
+The concept behind an enumeration is to create a human-readable way to represent a set of constant values, 
+which might otherwise be represented as numbers or strings.
+
+
+
+
+*/
+
+// enum Direction {
+//     Up,
+//     Down,
+//     Left,
+//     Right
+// }
+
+// /// use of this is if you put any other value instead of these 4 than ts will complain , tell them in compilation stage
+
+
+// function doSomething(keyPressed : Direction) {
+// 	// do something.
+// }
+
+// doSomething(Direction.Up); // OK
+// doSomething("Down"); //Argument of type '"Down"' is not assignable to parameter of type 'Direction'.ts(
+// console.log(Direction.Up); // 0
+// console.log(Direction[0]); // Up
+
+
+// enum Direction {
+//         Up = "up",
+//         Down = "down",
+//         Left = "left",
+//         Right  = "right"
+//     }
+    
+//     /// use of this is if you put any other value instead of these 4 than ts will complain , tell them in compilation stage
+    
+    
+//     function doSomething(keyPressed : Direction) {
+//     	// do something.
+//     }
+    
+//     doSomething(Direction.Up); // OK
+//     doSomething("Down"); //Argument of type '"Down"' is not assignable to parameter of type 'Direction'.ts(
+//     console.log(Direction.Up); // up
+//     console.log(Direction[0]); // Element implicitly has an 'any' type because expression of type '0' can't be used to index type 'typeof Direction'.
+
+
+// enum Direction {
+//     Up = 1,
+//     Down, // becomes 2 by default
+//     Left, // becomes 3
+//     Right // becomes 4
+// }
+
+// function doSomething(keyPressed: Direction) {
+// 	// do something.
+// }
+
+// doSomething(Direction.Down) // 2
+
+
+// 5. Common usecase in express
+// enum ResponseStatus {
+//     Success = 200,
+//     NotFound = 404,
+//     Error = 500
+// }
+
+// app.get("/', (req, res) => {
+//     if (!req.query.userId) {
+// 			res.status(ResponseStatus.Error).json({})
+//     }
+//     // and so on...
+// 		res.status(ResponseStatus.Success).json({});
+// })
+
+

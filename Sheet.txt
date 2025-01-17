@@ -93,3 +93,7 @@ Weather or not to include comments in the final js file
 
 whenever you are defining an argument there is need to define types and correct way to define types is through interfaces 
 
+------
+
+
+Enums -- 
